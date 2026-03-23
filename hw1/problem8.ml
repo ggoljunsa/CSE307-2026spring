@@ -5,4 +5,4 @@
 (* double : ('a -> 'a) -> 'a -> 'a *)
 (* Apply a function twice. *)
 let double (f : 'a -> 'a) : 'a -> 'a =
-  failwith "TODO"
+  fun x -> f (f x)

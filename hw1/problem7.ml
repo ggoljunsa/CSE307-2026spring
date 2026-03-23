@@ -5,4 +5,9 @@
 (* forall : ('a -> bool) -> 'a list -> bool *)
 (* Check if all elements of a list satisfy a predicate. *)
 let rec forall (p : 'a -> bool) (l : 'a list) : bool =
-  failwith "TODO"
+  match l with 
+  | [] -> true
+  | hd::tl -> 
+    if p hd = false then false
+    else forall p tl 
+

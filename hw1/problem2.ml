@@ -5,4 +5,10 @@
 (* range : int -> int -> int list *)
 (* Create a list of integers from n to m. *)
 let rec range (n : int) (m : int) : int list =
-  failwith "TODO"
+  if n > m then []
+  else
+    let rec check i =
+      if i < m+1 then
+        i:: check (i+1)
+      else []
+    in check (n)

@@ -5,4 +5,15 @@
 (* drop : 'a list -> int -> 'a list *)
 (* Remove the first n elements of a list. *)
 let rec drop (l : 'a list) (n : int) : 'a list =
-  failwith "TODO"
+  if n = 0 then l
+  else
+    match l with
+    | [] -> []
+    | hd::tl -> drop tl (n-1)
+
+let rec drop l n =
+  if n=0 then l
+  else
+    match l with
+    | [] -> []
+    | hd::tl -> drop tl (n-1)

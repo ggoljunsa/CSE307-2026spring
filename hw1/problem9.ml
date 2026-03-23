@@ -9,4 +9,11 @@ type btree =
 (* mem : int -> btree -> bool *)
 (* Check whether a given integer is in the tree. *)
 let rec mem (n : int) (t : btree) : bool =
-  failwith "TODO"
+  match t with
+  | Empty -> false
+  | Node(v, left, right) ->
+    if v = n then true
+    else 
+      mem n left || mem n right
+
+      
